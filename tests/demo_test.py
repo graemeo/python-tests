@@ -1,20 +1,16 @@
 import unittest
+from mock import patch
 import demo
+from calculator import Calculator
+
 
 class DemoTest(unittest.TestCase):
 
-    def test_should_add_up_numbers(self):
-       # given 
-       # when
-       expected = demo.add_me_up(1, 1)
-
-       # then
-       self.assertEqual(expected, 2)
-
-    def test_should_add_up_negative_numbers(self):
+    @patch('demo.Calculator')
+    def test_should_invoke_add_me_up_from_calculator(self, mocked_calculator):
        # given
        # when
-       expected = demo.add_me_up(-1, 2)
+       demo.calculate()
 
        # then
-       assert expected == 1
+       mocked_calculator.return_value.add_me_up.assert_called_once()

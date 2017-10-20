@@ -1,4 +1,4 @@
-
+[![Build Status](https://travis-ci.org/graemeo/python-tests.svg?branch=master)](https://travis-ci.org/graemeo/python-tests)
 # Description
 
 Simple Python project to explore and learn Python's testing capability.
